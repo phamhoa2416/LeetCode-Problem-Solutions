@@ -3,7 +3,7 @@ public:
     double myPow(double x, int n) {
         double result = 1;
 
-            if (n == INT_MIN) {
+        if (n == INT_MIN) {
             // Special case handling for n = INT_MIN
             result = x;
             n++;
