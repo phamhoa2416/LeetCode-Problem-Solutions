@@ -20,23 +20,21 @@ class Solution {
             count++;
         }
 
-        int position = 0;
         while (refPtr != null) {
             refPtr = refPtr.next;
             mainPtr = mainPtr.next;
-            position++;
         }
 
-        ListNode current = head;
-        if (current == mainPtr) {
-            head = current.next;
+        refPtr = head;
+        if (head == mainPtr) {
+            return head.next;
         }
         
-        for (int i = 0; i < position - 1; ++i) {
-            current = current.next;
+        while (refPtr.next != null && refPtr.next != mainPtr) {
+            refPtr = refPtr.next;
         }
-
-        current.next = current.next.next;
+        
+        refPtr.next = refPtr.next.next;
         return head;
     }
 }
